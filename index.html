@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/098ac757b3.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="w-10/12 mx-auto">
+        <h1 class="text-2xl font-bold mb-5"> Job Application Tracker </h1>
+
+        <div class="grid grid-cols-3 gap-4">
+
+            <div id="" class="shadow-sm p-5">
+                <P class="text-[14px] font-medium">Total</P>
+                <p id="total-count" class="text-2xl font-bold"> 0 </p>
+            </div>
+
+            <div id="" class="shadow-sm p-5">
+                <p class="text-[14px] font-medium"> Interview </p>
+                <p id="interview-count" class="text-2xl font-bold text-green-600">0</p>
+            </div>
+
+            <div id="" class="shadow-sm p-5">
+                <p class="text-[14px] font-medium">Rejected </p>
+                <p id="reject-count" class="text-2xl font-bold text-red-600">0</p>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="w-10/12 mx-auto my-[30px] opacity-25">
+        <hr>
+    </div>
+
+
+    <main>
+        <section class="flex justify-between w-10/12 mx-auto mb-6">
+            <h2 class="font-semibold text-xl"> Available Jobs </h2>
+            <div class="flex gap-1 font-medium">
+                <p><span id="">0</span> of <span id="">0</span> jobs </p>
+            </div>
+        </section>
+
+
+        <section class="w-10/12  mx-auto ">
+            <div class="flex gap-2 font-medium text-sm text-gray-400">
+
+                <button id="" class="all-card shadow-sm text-xl font-bold px-5 py-1">
+                    All
+                </button>
+
+                <button id="" class="interview-card shadow-sm text-xl font-bold px-3 py-1">
+                    Interview
+                </button>
+
+                <button id="" class="reject-card shadow-sm text-xl font-bold px-3 py-1">
+                    Rejected
+                </button>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="card w-10/12 mx-auto p-5 space-y-7 bg-white shadow my-4">
+
+                <div class="header-section flex justify-between items-center">
+                    <div>
+                        <h2 class="card-title text-[18px] font-semibold">Mobile First Corp</h2>
+                        <p class="title text-gray-400 text-[16px]">React Native Developer</p>
+
+                    </div>
+                    <div>
+                        <i class="icon fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <div class="job-section">
+                    <ul style="list-style:disc;" class="flex gap-7 text-sm text-gray-400">
+                        <p class="location"> Los Angeles, CA </p>
+                        <li class="work-time"> Part-Time </li>
+                        <li class="salary"> $80.000 - 120.000</li>
+                    </ul>
+                </div>
+                <div class="bage-section">
+                    <button class="bage-btn bg-slate-200 px-3 py-2 text-sm font-medium"> NOT APPLIED</button>
+                    <p class="bage-p mt-2">Build Cross-platform mobile Applications using react Native.work on products
+                        used by
+                        millions of users
+                        worldwide.</p>
+                </div>
+
+                <div class="card-btn flex gap-3">
+                    <button id="interview-btn"
+                        class="interview border border-green-600 text-green-600 px-3 py-2">INTERVIEW
+                        btn</button>
+                    <button class="reject border border-red-600 text-red-600 px-3 py-2">REJECTED btn</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="w-10/12 mx-auto text-center py-32 bg-white">
+            <img src="jobs.png" alt="" class="mx-auto">
+            <h1>No Jobs Available</h1>
+            <h3>Check Back Soon For New Job Opportunities</h3>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
