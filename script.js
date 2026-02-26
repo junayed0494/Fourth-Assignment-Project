@@ -13,7 +13,6 @@ function switchTab(tab){
 
     for(const t of tabs){
         const tabName = document.getElementById('btn-' + t);
-        console.log(tabName);
 
          if(t === tab){
             tabName.classList.remove(...tabInActive);
@@ -53,7 +52,7 @@ function switchTab(tab){
                 emptyState.classList.remove("hidden");
             }
         }
-    updateStat();
+    //updateStat();
 }
 
 
@@ -68,5 +67,51 @@ countTotal.innerText = cardContainer.children.length;
 switchTab(currentTab);
 
 
+document.getElementById('job-container').addEventListener('click', function(event){
+    const clickedElement = event.target; 
+    const card = clickedElement.closest(".card"); 
+    const parent = card.parentNode;      
+    const status = card.querySelector(".statas")
+    
+
+     if(clickedElement.classList.contains("interview")){
+         status.innerText = 'INTERVIEW'; 
+         interviewContainer.appendChild(card);
+         updateStat();
+     }
+
+     if(clickedElement.classList.contains("reject")){
+         status.innerText = 'REJECTED';
+         rejectContainer.appendChild(card);
+        updateStat();
+     }
+
+      if(clickedElement.classList.contains("delete")){
+         parent.removeChild(card);
+         updateStat();
+     }
+})
+
+
+ function updateStat(){
+     const counts = {
+         all: cardContainer.children.length,
+         interview: interviewContainer.children.length,
+         rejected: rejectContainer.children.length,
+     };
+
+    countTotal.innerText = counts.all;
+    countInterview.innerText = counts.interview; 
+    countReject.innerText = counts.rejected;
+    countAvailable.innerText = counts[currentTab];
+    if(counts[currentTab] < 1){
+        emptyState.classList.remove("hidden");
+    }
+    else{
+        emptyState.classList.add("hidden");
+    }
+}
+
+updateStat();
 
 
